@@ -2,30 +2,29 @@
 Written in [AutoHotkey][] script language, application *Hotstrings*  has many useful features:
 
 - quick text replacement aka hotstrings; 
-    
-    *short alphanumeric strings (aka triggerstrings) are used to automatically replace long alphanumeric strings (aka hotstrings)*;
+        *short alphanumeric strings (aka triggerstrings) are used to automatically replace long alphanumeric strings (aka hotstrings)*;
+        
 - defined hotstrings are operating system wide;
-
     *it means that can be triggered in any text / edit window, in any application; runs on Microsoft Windows family operating systems;*
+    
 - GUI (Graphical User Interface); 
-
     *for easy definition and/or edition of hotstrings*;
+    
 - clipboard ready;
-
     *useful especially for long text strings, as it enables entering the long hotstring in a blink of an eye*;
+    
 - one triggering abbreviation can call several different text strings of your choice;
-
     *chosen from menu*;
+    
 - overview of existing hotstrings with search capabilities;
+- 
 - definitions of hotstrings are stored in .csv files, as many, as you like; 
-
     *each file can contain hotstring belonging to specific category, e.g. emojis, physical symbols, first and second names etc.*;
+    
 - undoing of hotstrings;
-
     *conversion of last entered hotstring again into triggering abbreviation*;
 
 - written in AutoHotkey script language but does not require this language interpreter to be installed and can be run standalone thanks to .exe file;
-
     *nevertheless installation of [AutoHotkey][] is greatly adviced).*
 
 ---
@@ -168,25 +167,44 @@ Written in [AutoHotkey][] script language, application *Hotstrings*  has many us
 
 
 ## [What are the hotstrings?](#table-of-content "Return to Table of content")
-There are two corresponding notions:
+How automatic text conversion works:
+```
+╔════════════╗    ╔══════════════════╗
+║ user input ║ →  ║ automatic output ║ 
+╚════════════╝    ╚══════════════════╝
+```
+Example:
+```
+╔════════════╗    ╔═══════════════════╗
+║ btw[space] ║ →  ║ by the way[space] ║ 
+╚════════════╝    ╚═══════════════════╝
+```
 
-- triggerstring,
-- hotstring.
+| **user input** | **conversion options** | **conversion trigger** | **automatic output** |
+| :---: | :---: | :---: | :---: |
+| (what you type) | (defined for specific triggerstring + hotstring) | (automatic recognition of triggerstring) | (what you get) |
+| btw[space] | (empty = wait for ordinary ending character, e.g. [space] or [.] or [,] etc.) | [space] | by the way[space] |
+| triggerstring | (conversion) options | → | hotstring |
+| alphanumeric string | alphanumeric string | → | alphanumeric string |
+Wording convention: usually the corresponding notions *(option(s), triggestring, hotstring)* are also called as *hotstring*. So hotstring is in fact single definition of text conversion.
 
-The relationship between these two notions is ruled by options and can be presented as follows:
+To take place pairs of text strings (**user input** and **automatic output**) must be defined together with conversion rule(s), called options:
 
-user input | options | hostring recognizer | modified input
-:---:|:---:|:---: | :---: |
-triggerstring | (trigger) options | → | hotstring
-alphanumeric string | alphanumeric string | → | alphanumeric string
+definition (input, option(s), output) or for short: input, option(s), output.
 
-So the *hostring recognizer* triggers the corresponding hotstring, taking into consideration:
+So you need to define set of definitions, e.g. 
+```
+input1, option(s)1, output1
+input2, option(s)2, output2
+input3, option(s)3, output3
+input4, option(s)4, output4
+…
+```
 
-* user input (what user writes pressing keys of keyboard)
+store it according to given syntax and… run *Hotstrings* application. Since this moment each time you'll type any set of characters (input) recognized as one of previously defined it will be automatically converted into corresponding output.
+Or, what I personally prefer: each time you'll type any of your **triggerstrings**, it can be triggered  (converted) into corresponding **hotstring**.
 
-* options defined for particular pair (*triggerstring*, *hotstring*)
 
-Wording convention: usually the corresponding notions *(option(s), triggestring, hotstring)* are also called as *hotstring*.
 
 
 ## [How the *Hotstrings* application work?](#table-of-content "Return to Table of content")
