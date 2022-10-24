@@ -17,7 +17,7 @@ Written in [AutoHotkey][] script language, application *Hotstrings*  has many us
     *chosen from menu*;
     
 - overview of existing hotstrings with search capabilities;
-- 
+
 - definitions of hotstrings are stored in .csv files, as many, as you like; 
     *each file can contain hotstring belonging to specific category, e.g. emojis, physical symbols, first and second names etc.*;
     
